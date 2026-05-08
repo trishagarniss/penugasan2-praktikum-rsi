@@ -12,23 +12,23 @@ import {
 import {Label} from "@/components/ui/label"
 import {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
-import { useState } from "react";
+import {useState} from "react";
 
 
-export default function CardDemo() {
+export default function RegistrationCard() {
   const [username, setUsername] = useState("");
 
   // Simulasi cek ketersediaan (nanti bisa diganti logic API)
   const isAvailable = username.length > 3 && username !== "admin"; 
   const showMessage = username.length > 0;
-  
+
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle>Register new account</CardTitle>
           <CardDescription>
-            Enter your email below to create your account
+            Enter your credentials below to create your account
           </CardDescription>
           <CardAction>
             <Button variant="link">Log in</Button>
