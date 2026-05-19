@@ -106,7 +106,7 @@ def login_user(db: Session, login_data: LoginRequest):
         raise HTTPException(status_code=401, detail="Email atau password salah")
     
     access_token = create_access_token(
-        data={"sub": account.email, "role_id": account.role_id}
+        data={"sub": account.email, "user_id": account.user_id, "role_id": account.role_id}
     )
     
     return {"access_token": access_token, "token_type": "bearer"}
